@@ -19,4 +19,10 @@ jobs:
       - name: Cypress run
         run: |
           npm install
-          npx cypress run
+          npm run cy:run
+    
+      - name: Merge test reports
+        run: npm run merge:reports
+
+      - name: Generate HTML reports
+        run: npm run create:html:report
