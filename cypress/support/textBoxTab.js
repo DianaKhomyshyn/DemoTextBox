@@ -1,7 +1,15 @@
-import { formData } from '../fixtures/formData.json'
+/**
+ * @class TextBoxTab
+ * @classdesc Encapsulates interactions with the form elements on the TextBoxTab page.
+ * Provides methods to check the existence, visibility, and content of form fields,
+ * as well as to enter data and clear fields.
+ */
 
 class TextBoxTab {
 
+    /**
+     * Contains Cypress element selectors for the TextBoxTab form.
+     */
     elements = {
         formTitle : () => cy.get('h1.text-center'),
         formElement : () => cy.get('form#userForm'),
@@ -27,6 +35,7 @@ class TextBoxTab {
             .should('be.visible')
     }
 
+    // * @param {string} value - The expected text of the form title.
     checkFormTitleText(value) {
         this.elements.formTitle()
             .should('have.text', value)
@@ -101,21 +110,25 @@ class TextBoxTab {
             .should('be.empty');
     }
 
+    // * @param {string} fullName - The full name to be entered.
     enterFullName(fullName) {
         this.elements.fullNameInput()
             .type(fullName);
     }
 
+    //* @param {string} email - The email to be entered.
     enterEmail(email) {
         this.elements.emailInput()
             .type(email);
     }
 
+    //* @param {string} address - The address to be entered.
     enterCurrentAddress(address) {
         this.elements.currentAddressTextArea()
             .type(address);
     }
 
+    //* @param {string} address - The address to be entered.
     enterPermanentAddress(address) {
         this.elements.permanentAddressTextArea()
             .type(address);
@@ -143,24 +156,28 @@ class TextBoxTab {
             .should('be.visible')
     }
 
+    //* @param {string} outputName - The expected full name in the output.
     checkOutputFullName(outputName) {
         this.elements.outputName()
             .scrollIntoView()
             .should('have.text', outputName)
     }
 
+    //* @param {string} outputEmail - The expected email in the output.
     checkOutputEmail(outputEmail) {
         this.elements.outputEmail()
             .scrollIntoView()
             .should('have.text', outputEmail)
     }
 
+    //* @param {string} outputCurrentAddress - The expected current address in the output.
     checkOutputCurrentAddress(outputCurrentAddress) {
         this.elements.outputCurrentAddress()
             .scrollIntoView()
             .should('have.text', outputCurrentAddress)
     }
 
+    //* @param {string} outputPermanentAddress - The expected permanent address in the output.
     checkOutputPermanentAddress(outputPermanentAddress) {
         this.elements.outputPermanentAddress()
             .scrollIntoView()
