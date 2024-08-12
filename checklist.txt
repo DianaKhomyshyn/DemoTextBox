@@ -1,0 +1,9 @@
+        Demo QA - Text Box - Checklist:
+1. Verify that form title and form are present
+2. Verify that all form fields (Full Name, Email, Current Address, Permanent Address) and the Submit button are present
+3. Verify if the output section isn't appear on the screen after submiting the form with all fields empty
+4. Verify that the form does not accept an invalid email
+5. Ensure that output area is displayed after entering valid data in all fields and submitting the form
+6. Ensure that the entered data is correctly displayed in the output section
+7. Check if deleted fields disappear from the output section afetr cleaning values from the form
+
